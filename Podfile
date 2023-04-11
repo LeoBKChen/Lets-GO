@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '11.0'
+platform :ios, '13.0'
 
 target 'LetsGo' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -9,8 +9,8 @@ target 'LetsGo' do
   pod 'GoogleMaps'
 
   # Pods for LetsGo
-  pod 'Alamofire', '~> 4.4'
-  pod 'SwiftyJSON', '4.2'
+#  pod 'Alamofire', '~> 4.4'
+#  pod 'SwiftyJSON'
 
   target 'LetsGoTests' do
     inherit! :search_paths

@@ -8,8 +8,8 @@
 
 import UIKit
 import MapKit
-import Alamofire
-import SwiftyJSON
+//import Alamofire
+//import SwiftyJSON
 
 class ScheduleDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate, UINavigationControllerDelegate, CheckInPageViewControllerDelegate {
     
@@ -222,33 +222,33 @@ class ScheduleDetailViewController: UIViewController, UITableViewDataSource, UIT
                         
                         let params = [ "account" : account ]
                         let url = CONFIG.API_PREFIX + CONFIG.SIGN
-                        Alamofire.request(url, parameters: params, encoding: URLEncoding(destination: .queryString)).responseJSON(completionHandler: { response in
-                           
-                            print(response)
-                            
-                            if response.result.isSuccess{
-                                let json = JSON(response.result.value!)
-                                print(json)
-                               
-                                if ( json["check"] == true ){
-                                    self.Alert(title: "簽到檢查", msg: "簽到成功！")
-                                    let indexPath = IndexPath(row: button.tag, section: 0)
-                                    let cell = self.tableView.cellForRow(at: indexPath) as! ScheduleDetailTableViewCell
-                                    cell.pointsLabel.backgroundColor = UIColor(red: 252/255, green: 248/255, blue: 0/255, alpha: 1.0)
-                                    self.points += 1
-                                    self.personalInfoRecord.points = String(self.points)
-                                    PersonalInformation.savetoFile(record: self.personalInfoRecord)
-                                } else {
-                                    self.Alert(title: "伺服器回應", msg: "異常簽到狀況\n")
-                                    print("error: (response.error)")
-                                    button.isEnabled = true
-                                }
-                            }
-                            else{
-                                self.Alert(title: "Oops", msg: "網路或伺服器異常")
-                                button.isEnabled = true
-                            }
-                        })
+//                        Alamofire.request(url, parameters: params, encoding: URLEncoding(destination: .queryString)).responseJSON(completionHandler: { response in
+//
+//                            print(response)
+//
+//                            if response.result.isSuccess{
+//                                let json = JSON(response.result.value!)
+//                                print(json)
+//
+//                                if ( json["check"] == true ){
+//                                    self.Alert(title: "簽到檢查", msg: "簽到成功！")
+//                                    let indexPath = IndexPath(row: button.tag, section: 0)
+//                                    let cell = self.tableView.cellForRow(at: indexPath) as! ScheduleDetailTableViewCell
+//                                    cell.pointsLabel.backgroundColor = UIColor(red: 252/255, green: 248/255, blue: 0/255, alpha: 1.0)
+//                                    self.points += 1
+//                                    self.personalInfoRecord.points = String(self.points)
+//                                    PersonalInformation.savetoFile(record: self.personalInfoRecord)
+//                                } else {
+//                                    self.Alert(title: "伺服器回應", msg: "異常簽到狀況\n")
+//                                    print("error: (response.error)")
+//                                    button.isEnabled = true
+//                                }
+//                            }
+//                            else{
+//                                self.Alert(title: "Oops", msg: "網路或伺服器異常")
+//                                button.isEnabled = true
+//                            }
+//                        })
                     }
                     else{
                        Alert(title: "打卡檢查", msg: "尚未到達目的地！")
@@ -272,7 +272,7 @@ class ScheduleDetailViewController: UIViewController, UITableViewDataSource, UIT
     
     func checkLocation(tag: Int)-> Bool{
         print(tag) //optional
-        
+        return true
         print(centerCoordinate.latitude)
         print(centerCoordinate.longitude)
         print(self.coordinate[tag].latitude)
@@ -321,7 +321,7 @@ class ScheduleDetailViewController: UIViewController, UITableViewDataSource, UIT
 
                 let type = ScheduleCreateController.getType(category: self.category)
                 print("type: " + type)
-                NearbyPlacesController.getNearbyPlaces(type: type, radius: radius, coordinates: center, token: nil, completion: didReceiveResponse)
+                NearbyPlacesHelper.shared.getNearbyPlaces(type: type, radius: radius, coordinates: center, token: nil, completion: didReceiveResponse)
                 
                 startTimes.append(startTime)
                 endTimes.append(endTime)
@@ -386,24 +386,27 @@ class ScheduleDetailViewController: UIViewController, UITableViewDataSource, UIT
         }
     }
     
-    func didReceiveResponse(response:QNearbyPlacesResponse?) -> Void{
+    func didReceiveResponse(response:NearbyPlacesResponse?) -> Void{
         
-        if(response != nil && response?.status=="OK"){
+        if(response != nil && response?.status == "OK"){
             
-            let place1 = response?.places?[0].name ?? "none"
+            let place1 = response?.results[0].name ?? "none"
             print("place name : " + place1)
             
-            let place = response?.places!.randomElement()
+            let place = response?.results.randomElement()
             
-            if let name = place!.name{
+            if let name = place?.name{
                 places.append(name)
             }
-            placeIDs.append(place!.placeId)
+            if let placeId = place?.placeID{
+                placeIDs.append(placeId)
+            }
             
-            if let vicinity = place!.vicinity{
+            if let vicinity = place?.vicinity{
                 vicinitys.append(vicinity)
             }
-            if let location = place!.location{
+            
+            if let location = place?.geometry.locationCoordinate2D{
                 coordinate.append(location)
             }
                         

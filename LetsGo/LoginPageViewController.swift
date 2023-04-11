@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
+//import Alamofire
+//import SwiftyJSON
 
 class LoginPageViewController: UIViewController, UITextFieldDelegate {
 
@@ -58,30 +58,30 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
                 ]
                 print(params)
 
-                Alamofire.request(self.url, parameters: params, encoding: URLEncoding(destination: .queryString)).responseJSON(completionHandler: { response in
-                    
-                    print(response)
-                    print(response.result)
-    
-                    if response.result.isSuccess{
-                        let json = JSON(response.result.value!)
-                        print(json)
-                        print(json["success"])
-                        
-                        if ( json["success"] == true ){
-                            self.nkname = json["nkname"].rawString()!
-                            self.LoginSuccess()
-                            
-                        } else {
-                            self.Alert(title: "Oops!", msg: "帳密錯誤！\n")
-                            print("error: (response.error)")
-                        }
-                    }
-                    else{
-                         self.Alert(title: "Oops", msg: "網路或伺服器異常！\n建議使用下方訪客登入～")
-                    }
-                    
-                })
+//                Alamofire.request(self.url, parameters: params, encoding: URLEncoding(destination: .queryString)).responseJSON(completionHandler: { response in
+//
+//                    print(response)
+//                    print(response.result)
+//
+//                    if response.result.isSuccess{
+//                        let json = JSON(response.result.value!)
+//                        print(json)
+//                        print(json["success"])
+//
+//                        if ( json["success"] == true ){
+//                            self.nkname = json["nkname"].rawString()!
+//                            self.LoginSuccess()
+//
+//                        } else {
+//                            self.Alert(title: "Oops!", msg: "帳密錯誤！\n")
+//                            print("error: (response.error)")
+//                        }
+//                    }
+//                    else{
+//                         self.Alert(title: "Oops", msg: "網路或伺服器異常！\n建議使用下方訪客登入～")
+//                    }
+//
+//                })
                 
             }
             

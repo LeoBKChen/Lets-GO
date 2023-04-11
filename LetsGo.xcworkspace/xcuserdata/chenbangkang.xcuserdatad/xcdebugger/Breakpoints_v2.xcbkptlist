@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "A02C9F35-84E7-4424-833B-7B251E9A4A18"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0DDDA24B-6AA8-4F72-85C4-4FBE6B8601A6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LetsGo/ScheduleDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "390"
+            endingLineNumber = "390"
+            landmarkName = "didReceiveResponse(response:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "056628C3-8F85-4BC3-BDA6-D086EAD9BEA6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LetsGo/Controllers/NearbyPlacesController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "getNearbyPlaces(type:radius:coordinates:token:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "056628C3-8F85-4BC3-BDA6-D086EAD9BEA6 - 4de7aa561130510b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 ((data: Foundation.Data, response: __C.NSURLResponse)) throws -&gt; Foundation.Data in LetsGo.NearbyPlacesHelper.getNearbyPlaces(type: Swift.String, radius: Swift.String, coordinates: __C.CLLocationCoordinate2D, token: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Optional&lt;LetsGo.NearbyPlacesResponse&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "LetsGo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chenbangkang/Documents/Lets-GO/LetsGo/Controllers/NearbyPlacesController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  uuid = "056628C3-8F85-4BC3-BDA6-D086EAD9BEA6 - 4de7aa561130510b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 ((data: Foundation.Data, response: __C.NSURLResponse)) throws -&gt; Foundation.Data in LetsGo.NearbyPlacesHelper.getNearbyPlaces(type: Swift.String, radius: Swift.String, coordinates: __C.CLLocationCoordinate2D, token: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Optional&lt;LetsGo.NearbyPlacesResponse&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "LetsGo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chenbangkang/Documents/Lets-GO/LetsGo/Controllers/NearbyPlacesController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "344">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FDB5BB05-E734-495B-B1D6-F5D4C21682CA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LetsGo/Controllers/NearbyPlacesController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "getNearbyPlaces(type:radius:coordinates:token:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6F63CBC9-16E3-461A-931C-6CA22A452859"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LetsGo/Controllers/NearbyPlacesController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "getNearbyPlaces(type:radius:coordinates:token:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9BB60458-E765-45E3-9FE3-E5B2CCF3692C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LetsGo/Controllers/NearbyPlacesController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "getNearbyPlaces(type:radius:coordinates:token:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

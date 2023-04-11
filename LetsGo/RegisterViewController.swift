@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
+//import Alamofire
+//import SwiftyJSON
 
 class RegisterViewController: UIViewController, UITextFieldDelegate{
     
@@ -78,26 +78,26 @@ class RegisterViewController: UIViewController, UITextFieldDelegate{
                                "birthday":"19990223",
                                ]
                 print(params)
-                Alamofire.request(url, parameters: params, encoding: URLEncoding(destination: .queryString)).responseJSON(completionHandler: { response in
-
-                    print(response)
-                    print(response.result)
-
-
-                    if response.result.isSuccess {
-                     
-                        let json = JSON(response.result.value!)
-
-                        print(json)
-
-                        self.Alert(title: "伺服器回應", msg: json["註冊成功"].stringValue)
-                     
-                    } else {
-                        self.Alert(title: "伺服器回應", msg: "註冊失敗")
-                        print("error: (response.error)")
-                    }
-
-                })
+//                Alamofire.request(url, parameters: params, encoding: URLEncoding(destination: .queryString)).responseJSON(completionHandler: { response in
+//
+//                    print(response)
+//                    print(response.result)
+//
+//
+//                    if response.result.isSuccess {
+//                     
+//                        let json = JSON(response.result.value!)
+//
+//                        print(json)
+//
+//                        self.Alert(title: "伺服器回應", msg: json["註冊成功"].stringValue)
+//                     
+//                    } else {
+//                        self.Alert(title: "伺服器回應", msg: "註冊失敗")
+//                        print("error: (response.error)")
+//                    }
+//
+//                })
             }else{
                 self.Alert(title: "訊息", msg: "資料不完整")
             }

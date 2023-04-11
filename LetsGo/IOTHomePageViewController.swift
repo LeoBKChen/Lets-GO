@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
+//import Alamofire
+//import SwiftyJSON
 
 class IOTHomePageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate ,UINavigationControllerDelegate{
     
@@ -48,25 +48,25 @@ class IOTHomePageViewController: UIViewController, UITableViewDataSource, UITabl
         
         let params = ["command": command, "light_name": light_id[index], "account": "ch9765141"]
         
-        Alamofire.request(url, parameters: params, encoding: URLEncoding(destination: .queryString)).responseJSON(completionHandler: { response in
-
-            print(response)
-            print(response.result)
-
-
-            if response.result.isSuccess {
-
-                let json = JSON(response.result.value!)
-
-                print(json)
-
-
-            } else {
-                self.Alert(title: "response", msg: "fail\n")
-                print("error: (response.error)")
-            }
-
-        })
+//        Alamofire.request(url, parameters: params, encoding: URLEncoding(destination: .queryString)).responseJSON(completionHandler: { response in
+//
+//            print(response)
+//            print(response.result)
+//
+//
+//            if response.result.isSuccess {
+//
+//                let json = JSON(response.result.value!)
+//
+//                print(json)
+//
+//
+//            } else {
+//                self.Alert(title: "response", msg: "fail\n")
+//                print("error: (response.error)")
+//            }
+//
+//        })
         
     }
 

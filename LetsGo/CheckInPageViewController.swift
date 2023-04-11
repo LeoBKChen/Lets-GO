@@ -8,8 +8,8 @@
 
 import UIKit
 import Photos
-import Alamofire
-import SwiftyJSON
+//import Alamofire
+//import SwiftyJSON
 
 protocol CheckInPageViewControllerDelegate {
     func update(record: SinglePlaceRecord)
@@ -210,23 +210,23 @@ class CheckInPageViewController: UIViewController, UIImagePickerControllerDelega
             let lat = String(self.coordianate.latitude)
             //
             
-            Alamofire.upload(
-                multipartFormData: { MultipartFormData in
-                    MultipartFormData.append(account.data(using: String.Encoding.utf8)!, withName: "account")
-                    MultipartFormData.append(self.placeName.data(using: String.Encoding.utf8)!, withName: "address")
-                    MultipartFormData.append(title.data(using: String.Encoding.utf8)!, withName: "title")
-                    MultipartFormData.append(comment.data(using: String.Encoding.utf8)!, withName: "textfile")
-                    MultipartFormData.append(data!, withName: "image", fileName: filename, mimeType: "image/jpg")
-                    MultipartFormData.append(lng.data(using: String.Encoding.utf8)!, withName: "lng")
-                    MultipartFormData.append(lat.data(using: String.Encoding.utf8)!, withName: "lat")
-                },
-                to: url,
-                encodingCompletion: { result in
-                    print(result)
-                    self.resignKeyboardNotification()
-                    self.navigationController?.popViewController(animated: true)
-                }
-            )
+//            Alamofire.upload(
+//                multipartFormData: { MultipartFormData in
+//                    MultipartFormData.append(account.data(using: String.Encoding.utf8)!, withName: "account")
+//                    MultipartFormData.append(self.placeName.data(using: String.Encoding.utf8)!, withName: "address")
+//                    MultipartFormData.append(title.data(using: String.Encoding.utf8)!, withName: "title")
+//                    MultipartFormData.append(comment.data(using: String.Encoding.utf8)!, withName: "textfile")
+//                    MultipartFormData.append(data!, withName: "image", fileName: filename, mimeType: "image/jpg")
+//                    MultipartFormData.append(lng.data(using: String.Encoding.utf8)!, withName: "lng")
+//                    MultipartFormData.append(lat.data(using: String.Encoding.utf8)!, withName: "lat")
+//                },
+//                to: url,
+//                encodingCompletion: { result in
+//                    print(result)
+//                    self.resignKeyboardNotification()
+//                    self.navigationController?.popViewController(animated: true)
+//                }
+//            )
 
 
         }

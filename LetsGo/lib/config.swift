@@ -16,6 +16,6 @@ struct CONFIG{
     static let LIGHT = "light/lightControl_2.php"
     static let PHOTO = "photo/photoupload.php"
     static let CHECKIN_HISTORY = "location/locationhistory.php"
-    static let googlePlacesAPIKey = "UseYourOwnAPIKey"
+    static let googlePlacesAPIKey = "AIzaSyBYMLqPtkWYHAGOZwDVHebF6HiiZwliG2M"
     static let SIGN = "login_sys/memberstate.php"
 }
